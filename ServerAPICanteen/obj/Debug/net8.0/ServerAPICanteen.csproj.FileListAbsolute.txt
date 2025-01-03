@@ -141,3 +141,4 @@ C:\Users\Admin\OneDrive\Documents\ServerAPICanteen\ServerAPICanteen\obj\Debug\ne
 C:\Users\Admin\OneDrive\Documents\ServerAPICanteen\ServerAPICanteen\obj\Debug\net8.0\ServerAPICanteen.pdb
 C:\Users\Admin\OneDrive\Documents\ServerAPICanteen\ServerAPICanteen\obj\Debug\net8.0\ServerAPICanteen.genruntimeconfig.cache
 C:\Users\Admin\OneDrive\Documents\ServerAPICanteen\ServerAPICanteen\obj\Debug\net8.0\ref\ServerAPICanteen.dll
+C:\Users\Admin\OneDrive\Documents\ServerAPICanteen\ServerAPICanteen\obj\Debug\net8.0\ServerAPICanteen.sourcelink.json

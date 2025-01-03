@@ -10,6 +10,7 @@
         public string? Description { get; set; }
         public bool? Active { get; set; }
         public int? IdCategory { get; set; }
+        public double? Rating { get; set; }
 
         // Navigation properties
         public Category? Category { get; set; }

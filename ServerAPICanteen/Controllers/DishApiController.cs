@@ -24,7 +24,27 @@ namespace ServerAPICanteen.Controllers
             try
             {
                 var dishes = await _dishRepository.GetDishesAsync();
-                return Ok(dishes);
+                var simplifiedDishes = dishes.Select(dish => new
+                {
+                    dish.IdDish,
+                    dish.DishName,
+                    dish.PictureUrlArray,
+                    dish.Amount,
+                    dish.DishStats,
+                    dish.Description,
+                    dish.Active,
+                    dish.IdCategory,
+                    dish.Rating,
+                    category = dish.Category == null ? null : new
+                    {
+                        dish.Category.IdCategory,
+                        dish.Category.CategoryName,
+                        dish.Category.Description,
+                        dish.Category.Active
+                    }
+                });
+
+                return Ok(simplifiedDishes);
             }
             catch (Exception ex)
             {
@@ -32,6 +52,25 @@ namespace ServerAPICanteen.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
+
+
+        [HttpGet("ordered-by-dish-rating")]
+        public async Task<IActionResult> GetDishesOrderedByDishRating()
+        {
+            try
+            {
+                var dishes = await _dishRepository.GetDishesOrderedByDishRatingAsync();
+                return Ok(dishes);
+            }
+            catch (Exception ex)
+            {
+                // Log lỗi nếu cần
+                Console.WriteLine($"Error: {ex.Message}");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetDishById(int id)
@@ -47,6 +86,23 @@ namespace ServerAPICanteen.Controllers
             {
                 // Handle exception
                 return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpGet("category/{id}")]
+        public async Task<IActionResult> GetDishesByCategoryId(int id)
+        {
+            try
+            {
+                var dishes = await _dishRepository.GetDishesByCategoryIdAsync(id);
+                if (dishes == null || !dishes.Any())
+                    return NotFound("No dishes found for the given category ID.");
+                return Ok(dishes);
+            }
+            catch (Exception ex)
+            {
+                // Handle exception
+                return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
 
@@ -96,5 +152,7 @@ namespace ServerAPICanteen.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
+
+
     }
 }
