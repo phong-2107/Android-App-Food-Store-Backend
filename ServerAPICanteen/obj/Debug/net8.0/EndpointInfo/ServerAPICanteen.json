@@ -1,0 +1,1186 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "TNSV_API",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Authenticate/register": {
+      "post": {
+        "tags": [
+          "Authenticate"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistrationModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistrationModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistrationModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Authenticate/login": {
+      "post": {
+        "tags": [
+          "Authenticate"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Authenticate/logout": {
+      "post": {
+        "tags": [
+          "Authenticate"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/CanteenApi": {
+      "get": {
+        "tags": [
+          "CanteenApi"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "CanteenApi"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Canteen"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Canteen"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Canteen"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CanteenApi/{id}": {
+      "get": {
+        "tags": [
+          "CanteenApi"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "CanteenApi"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Canteen"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Canteen"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Canteen"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "CanteenApi"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CategoryApi": {
+      "get": {
+        "tags": [
+          "CategoryApi"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "CategoryApi"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Category"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Category"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Category"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CategoryApi/{id}": {
+      "get": {
+        "tags": [
+          "CategoryApi"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "CategoryApi"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Category"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Category"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Category"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "CategoryApi"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CustomerOrderApi": {
+      "post": {
+        "tags": [
+          "CustomerOrderApi"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerOrder"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerOrder"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerOrder"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CustomerOrderApi/{id}": {
+      "put": {
+        "tags": [
+          "CustomerOrderApi"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerOrder"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerOrder"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerOrder"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "CustomerOrderApi"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "CustomerOrderApi"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/DishApi": {
+      "get": {
+        "tags": [
+          "DishApi"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "DishApi"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dish"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dish"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dish"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/DishApi/{id}": {
+      "get": {
+        "tags": [
+          "DishApi"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "DishApi"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dish"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dish"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dish"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "DishApi"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/DishApi/{id}/upload-image": {
+      "post": {
+        "tags": [
+          "DishApi"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "file": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Image/upload": {
+      "post": {
+        "tags": [
+          "Image"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "file": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/OrderM": {
+      "get": {
+        "tags": [
+          "OrderM"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/OrderM/{id}": {
+      "get": {
+        "tags": [
+          "OrderM"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/User/{id}": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Canteen": {
+        "type": "object",
+        "properties": {
+          "idCanteen": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "canteenName": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "buildingName": {
+            "type": "string",
+            "nullable": true
+          },
+          "logoUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "activeStats": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "phone": {
+            "type": "string",
+            "nullable": true
+          },
+          "creDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "active": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "customerOrders": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomerOrder"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Category": {
+        "type": "object",
+        "properties": {
+          "idCategory": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "categoryName": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "active": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "dishes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Dish"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CustomerOrder": {
+        "type": "object",
+        "properties": {
+          "idOrder": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "idCanteen": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "qrCodeValue": {
+            "type": "string",
+            "nullable": true
+          },
+          "creDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "amount": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "vatValue": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "finalAmount": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "paidMethod": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "paidStats": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "specialNote": {
+            "type": "string",
+            "nullable": true
+          },
+          "isOrderReceived": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "totalAmount": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          },
+          "canteen": {
+            "$ref": "#/components/schemas/Canteen"
+          },
+          "orderDetails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrderDetail"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dish": {
+        "type": "object",
+        "properties": {
+          "idDish": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dishName": {
+            "type": "string",
+            "nullable": true
+          },
+          "pictureUrlArray": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "dishStats": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "active": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "idCategory": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "category": {
+            "$ref": "#/components/schemas/Category"
+          },
+          "orderDetails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrderDetail"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginModel": {
+        "required": [
+          "password",
+          "username"
+        ],
+        "type": "object",
+        "properties": {
+          "username": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "password": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrderDetail": {
+        "type": "object",
+        "properties": {
+          "idOrder": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idDish": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "totalAmount": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "customerOrder": {
+            "$ref": "#/components/schemas/CustomerOrder"
+          },
+          "dish": {
+            "$ref": "#/components/schemas/Dish"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegistrationModel": {
+        "required": [
+          "email",
+          "password",
+          "username"
+        ],
+        "type": "object",
+        "properties": {
+          "username": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "email": {
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
+          },
+          "password": {
+            "minLength": 6,
+            "type": "string"
+          },
+          "initials": {
+            "type": "string",
+            "nullable": true
+          },
+          "role": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "format": "tel",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "userName": {
+            "type": "string",
+            "nullable": true
+          },
+          "normalizedUserName": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "normalizedEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "emailConfirmed": {
+            "type": "boolean"
+          },
+          "passwordHash": {
+            "type": "string",
+            "nullable": true
+          },
+          "securityStamp": {
+            "type": "string",
+            "nullable": true
+          },
+          "concurrencyStamp": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumberConfirmed": {
+            "type": "boolean"
+          },
+          "twoFactorEnabled": {
+            "type": "boolean"
+          },
+          "lockoutEnd": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lockoutEnabled": {
+            "type": "boolean"
+          },
+          "accessFailedCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fullname": {
+            "type": "string",
+            "nullable": true
+          },
+          "sex": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "avatarUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "accountStats": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "googleAuth": {
+            "type": "string",
+            "nullable": true
+          },
+          "facebookAuth": {
+            "type": "string",
+            "nullable": true
+          },
+          "creDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "active": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "initials": {
+            "type": "string",
+            "nullable": true
+          },
+          "customerOrders": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomerOrder"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "Enter 'Bearer' followed by a space and the JWT token",
+        "scheme": "Bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

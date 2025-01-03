@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using ServerAPICanteen.Models;
@@ -18,6 +19,7 @@ builder.Services.AddIdentity<User, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
 
+builder.Services.AddScoped<IOrderMRepository, OrderMRepository>();
 builder.Services.AddScoped<IDishRepository, DishRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<ICanteenRepository, CanteenRepository>();
@@ -26,6 +28,14 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 builder.Services.AddControllers();
 //builder.Services.AddScoped<IProductRepository, ProductRepository>();
+
+
+builder.Services.Configure<CloudinarySettings>(builder.Configuration.GetSection("CloudinarySettings"));
+builder.Services.AddSingleton(provider =>
+{
+    var config = provider.GetRequiredService<IOptions<CloudinarySettings>>().Value;
+    return new CloudinaryDotNet.Cloudinary(new CloudinaryDotNet.Account(config.CloudName, config.ApiKey, config.ApiSecret));
+});
 
 // Configure CORS
 builder.Services.AddCors(options =>

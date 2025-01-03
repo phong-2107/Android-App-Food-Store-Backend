@@ -1,0 +1,450 @@
+[
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.AuthenticateController",
+    "Method": "Login",
+    "RelativePath": "api/Authenticate/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "ServerAPICanteen.Models.LoginModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.AuthenticateController",
+    "Method": "Logout",
+    "RelativePath": "api/Authenticate/logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.AuthenticateController",
+    "Method": "Register",
+    "RelativePath": "api/Authenticate/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "ServerAPICanteen.Models.RegistrationModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.CanteenApiController",
+    "Method": "GetCanteens",
+    "RelativePath": "api/CanteenApi",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.CanteenApiController",
+    "Method": "AddCanteen",
+    "RelativePath": "api/CanteenApi",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "canteen",
+        "Type": "ServerAPICanteen.Models.Canteen",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.CanteenApiController",
+    "Method": "GetCanteenById",
+    "RelativePath": "api/CanteenApi/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.CanteenApiController",
+    "Method": "UpdateCanteen",
+    "RelativePath": "api/CanteenApi/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "canteen",
+        "Type": "ServerAPICanteen.Models.Canteen",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.CanteenApiController",
+    "Method": "DeleteCanteen",
+    "RelativePath": "api/CanteenApi/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.CategoryApiController",
+    "Method": "GetCategories",
+    "RelativePath": "api/CategoryApi",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.CategoryApiController",
+    "Method": "AddCategory",
+    "RelativePath": "api/CategoryApi",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "category",
+        "Type": "ServerAPICanteen.Models.Category",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.CategoryApiController",
+    "Method": "GetCategoryById",
+    "RelativePath": "api/CategoryApi/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.CategoryApiController",
+    "Method": "UpdateCategory",
+    "RelativePath": "api/CategoryApi/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "category",
+        "Type": "ServerAPICanteen.Models.Category",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.CategoryApiController",
+    "Method": "DeleteCategory",
+    "RelativePath": "api/CategoryApi/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.CustomerOrderApiController",
+    "Method": "CreateCustomerOrder",
+    "RelativePath": "api/CustomerOrderApi",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customerOrder",
+        "Type": "ServerAPICanteen.Models.CustomerOrder",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.CustomerOrderApiController",
+    "Method": "UpdateCustomerOrder",
+    "RelativePath": "api/CustomerOrderApi/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "customerOrder",
+        "Type": "ServerAPICanteen.Models.CustomerOrder",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.CustomerOrderApiController",
+    "Method": "DeleteCustomerOrder",
+    "RelativePath": "api/CustomerOrderApi/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.CustomerOrderApiController",
+    "Method": "GetCustomerOrderById",
+    "RelativePath": "api/CustomerOrderApi/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.DishApiController",
+    "Method": "GetDishes",
+    "RelativePath": "api/DishApi",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.DishApiController",
+    "Method": "AddDish",
+    "RelativePath": "api/DishApi",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dish",
+        "Type": "ServerAPICanteen.Models.Dish",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.DishApiController",
+    "Method": "GetDishById",
+    "RelativePath": "api/DishApi/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.DishApiController",
+    "Method": "UpdateDish",
+    "RelativePath": "api/DishApi/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dish",
+        "Type": "ServerAPICanteen.Models.Dish",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.DishApiController",
+    "Method": "DeleteDish",
+    "RelativePath": "api/DishApi/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.DishApiController",
+    "Method": "UploadDishImage",
+    "RelativePath": "api/DishApi/{id}/upload-image",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.ImageController",
+    "Method": "UploadImage",
+    "RelativePath": "api/Image/upload",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.OrderMController",
+    "Method": "GetAllOrders",
+    "RelativePath": "api/OrderM",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.OrderMController",
+    "Method": "GetOrderById",
+    "RelativePath": "api/OrderM/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.UserController",
+    "Method": "GetUserById",
+    "RelativePath": "api/User/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.UserController",
+    "Method": "UpdateUser",
+    "RelativePath": "api/User/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "updatedUser",
+        "Type": "ServerAPICanteen.Models.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

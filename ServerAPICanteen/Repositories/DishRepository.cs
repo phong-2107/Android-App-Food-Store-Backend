@@ -43,5 +43,16 @@ namespace ServerAPICanteen.Repositories
                 await _context.SaveChangesAsync();
             }
         }
+
+        public async Task UpdateDishPictureAsync(int id, string pictureUrl)
+        {
+            var dish = await _context.Dishes.FindAsync(id);
+            if (dish != null)
+            {
+                dish.PictureUrlArray = pictureUrl;
+                await _context.SaveChangesAsync();
+            }
+        }
+
     }
 }

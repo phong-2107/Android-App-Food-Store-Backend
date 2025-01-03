@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using CloudinaryDotNet.Actions;
+using CloudinaryDotNet;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ServerAPICanteen.Models;
@@ -96,5 +98,27 @@ namespace ServerAPICanteen.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
+
+        [HttpPost("{id}/upload-image")]
+        public async Task<IActionResult> UploadDishImage(int id, IFormFile file, [FromServices] Cloudinary cloudinary)
+        {
+            if (file == null || file.Length == 0)
+                return BadRequest("Please upload a valid image file.");
+
+            var uploadParams = new ImageUploadParams
+            {
+                File = new FileDescription(file.FileName, file.OpenReadStream()),
+                Transformation = new Transformation().Crop("fill").Gravity("face").Width(500).Height(500)
+            };
+
+            var uploadResult = await cloudinary.UploadAsync(uploadParams);
+
+            if (uploadResult.StatusCode != System.Net.HttpStatusCode.OK)
+                return StatusCode(500, "Error uploading image to Cloudinary.");
+
+            await _dishRepository.UpdateDishPictureAsync(id, uploadResult.Url.ToString());
+            return Ok(new { url = uploadResult.Url.ToString() });
+        }
+
     }
 }
