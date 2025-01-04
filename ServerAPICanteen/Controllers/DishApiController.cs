@@ -19,21 +19,23 @@ namespace ServerAPICanteen.Controllers
             _dishRepository = dishRepository;
         }
 
+
         [HttpGet]
-        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetDishes()
         {
             try
             {
-                var dishes = await _dishRepository.GetDishesAsync();
-                return Ok(dishes);
+                // Lấy danh sách món ăn với tên danh mục
+                var dishes = await _dishRepository.GetDishesWithCategoryAsync();
+                return Ok(dishes); // Trả về danh sách với categoryName
             }
             catch (Exception ex)
             {
-                // Handle exception
+                // Xử lý lỗi
                 return StatusCode(500, "Internal server error");
             }
         }
+
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetDishById(int id)
@@ -119,6 +121,31 @@ namespace ServerAPICanteen.Controllers
             await _dishRepository.UpdateDishPictureAsync(id, uploadResult.Url.ToString());
             return Ok(new { url = uploadResult.Url.ToString() });
         }
+        [HttpPatch("{id}/toggle-active")]
+        public async Task<IActionResult> ToggleActiveDish(int id)
+        {
+            try
+            {
+                // Lấy thông tin món ăn
+                var dish = await _dishRepository.GetDishByIdAsync(id);
+                if (dish == null)
+                    return NotFound(new { message = "Dish not found." });
+
+                // Đảo ngược trạng thái Active
+                dish.Active = !dish.Active;
+
+                // Cập nhật món ăn
+                await _dishRepository.UpdateDishAsync(dish);
+
+                return Ok(new { id = dish.IdDish, active = dish.Active });
+            }
+            catch (Exception ex)
+            {
+                // Xử lý lỗi
+                return StatusCode(500, "Internal server error");
+            }
+        }
 
     }
+
 }

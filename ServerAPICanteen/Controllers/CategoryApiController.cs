@@ -96,5 +96,30 @@ namespace ServerAPICanteen.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
+        [HttpPatch("{id}/toggle-active")]
+        public async Task<IActionResult> ToggleActiveCategory(int id)
+        {
+            try
+            {
+                // Lấy thông tin danh mục
+                var category = await _categoryRepository.GetCategoryByIdAsync(id);
+                if (category == null)
+                    return NotFound(new { message = "Category not found." });
+
+                // Đảo ngược trạng thái Active
+                category.Active = !category.Active;
+
+                // Cập nhật danh mục
+                await _categoryRepository.UpdateCategoryAsync(category);
+
+                return Ok(new { id = category.IdCategory, active = category.Active });
+            }
+            catch (Exception ex)
+            {
+                // Xử lý lỗi
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
     }
 }

@@ -27,5 +27,13 @@ namespace ServerAPICanteen.Repositories
                 .Include(o => o.User)
                 .FirstOrDefaultAsync(o => o.IdOrder == id);
         }
+
+        public async Task<IEnumerable<OrderDetail>> GetOrderDetailsByOrderIdAsync(int orderId)
+        {
+            return await _context.OrderDetails
+                .Where(od => od.IdOrder == orderId)
+                .Include(od => od.Dish) // Include related Dish
+                .ToListAsync();
+        }
     }
 }

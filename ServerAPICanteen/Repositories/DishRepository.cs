@@ -53,6 +53,21 @@ namespace ServerAPICanteen.Repositories
                 await _context.SaveChangesAsync();
             }
         }
+        public async Task<IEnumerable<object>> GetDishesWithCategoryAsync()
+        {
+            return await _context.Dishes
+                .Select(dish => new
+                {
+                    dish.IdDish,
+                    dish.DishName,
+                    dish.Description,
+                    dish.Amount,
+                    dish.PictureUrlArray,
+                    dish.Active,
+                    CategoryName = dish.Category != null ? dish.Category.CategoryName : "Unknown Category"
+                })
+                .ToListAsync();
+        }
 
     }
 }

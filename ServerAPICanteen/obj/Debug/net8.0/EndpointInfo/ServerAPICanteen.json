@@ -334,6 +334,29 @@
         }
       }
     },
+    "/api/CategoryApi/{id}/toggle-active": {
+      "patch": {
+        "tags": [
+          "CategoryApi"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/CustomerOrderApi": {
       "post": {
         "tags": [
@@ -632,6 +655,29 @@
         }
       }
     },
+    "/api/DishApi/{id}/toggle-active": {
+      "patch": {
+        "tags": [
+          "DishApi"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/Image/upload": {
       "post": {
         "tags": [
@@ -677,6 +723,29 @@
       }
     },
     "/api/OrderM/{id}": {
+      "get": {
+        "tags": [
+          "OrderM"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/OrderM/{id}/details": {
       "get": {
         "tags": [
           "OrderM"

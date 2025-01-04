@@ -200,6 +200,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ServerAPICanteen.Controllers.CategoryApiController",
+    "Method": "ToggleActiveCategory",
+    "RelativePath": "api/CategoryApi/{id}/toggle-active",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ServerAPICanteen.Controllers.CustomerOrderApiController",
     "Method": "CreateCustomerOrder",
     "RelativePath": "api/CustomerOrderApi",
@@ -349,6 +365,22 @@
   },
   {
     "ContainingType": "ServerAPICanteen.Controllers.DishApiController",
+    "Method": "ToggleActiveDish",
+    "RelativePath": "api/DishApi/{id}/toggle-active",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.DishApiController",
     "Method": "UploadDishImage",
     "RelativePath": "api/DishApi/{id}/upload-image",
     "HttpMethod": "POST",
@@ -398,6 +430,22 @@
     "ContainingType": "ServerAPICanteen.Controllers.OrderMController",
     "Method": "GetOrderById",
     "RelativePath": "api/OrderM/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServerAPICanteen.Controllers.OrderMController",
+    "Method": "GetOrderDetailsByOrderId",
+    "RelativePath": "api/OrderM/{id}/details",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

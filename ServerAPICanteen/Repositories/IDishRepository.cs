@@ -10,5 +10,6 @@ namespace ServerAPICanteen.Repositories
         Task UpdateDishAsync(Dish dish);
         Task DeleteDishAsync(int id);
         Task UpdateDishPictureAsync(int id, string pictureUrl);
+        Task<IEnumerable<object>> GetDishesWithCategoryAsync();
     }
 }

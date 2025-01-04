@@ -29,5 +29,15 @@ namespace ServerAPICanteen.Controllers
             if (order == null) return NotFound();
             return Ok(order);
         }
+
+        [HttpGet("{id}/details")]
+        public async Task<IActionResult> GetOrderDetailsByOrderId(int id)
+        {
+            var orderDetails = await _orderRepository.GetOrderDetailsByOrderIdAsync(id);
+            if (orderDetails == null || !orderDetails.Any())
+                return NotFound(new { message = "No order details found for the given order ID." });
+
+            return Ok(orderDetails);
+        }
     }
 }
