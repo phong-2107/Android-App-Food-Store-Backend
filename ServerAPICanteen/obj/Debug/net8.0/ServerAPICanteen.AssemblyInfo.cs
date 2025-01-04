@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ServerAPICanteen")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+86187bc7151e122bd56f5fa6a1199764fd0e0dd6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+895856c8f4d092eb5425df77e63fd37a413d0dca")]
 [assembly: System.Reflection.AssemblyProductAttribute("ServerAPICanteen")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ServerAPICanteen")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
